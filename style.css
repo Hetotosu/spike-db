@@ -17,7 +17,15 @@ header {
 .brand-card:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 .brand-logo-img { max-width: 70%; max-height: 50px; object-fit: contain; }
 
-/* 一覧 */
+/* ★一覧画面のヘッダー：左側の余白をさらに広げて右に寄せました */
+.brand-header { 
+    padding: 30px 40px 10px 120px; /* 左余白を120pxに増加 */
+    border-bottom: 1px solid #eee; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+.brand-header h2 { font-size: 24px; margin: 0; }
+
 .series-section { padding: 30px; border-bottom: 1px solid #eee; }
 .spike-scroll-wrapper { display: flex; overflow-x: auto; gap: 20px; padding: 10px 0; }
 .spike-item { min-width: 200px; border: 1px solid #eee; padding: 15px; text-align: center; cursor: pointer; transition: 0.2s; }
@@ -26,58 +34,33 @@ header {
 .img-box img { max-width: 90%; max-height: 90%; }
 
 /* 詳細ページレイアウト */
-.detail-container { 
-    display: grid; 
-    grid-template-columns: 420px 1fr; 
-    gap: 40px; 
-    padding: 30px; 
-    max-width: 1200px; 
-    margin: 0 auto; 
-}
-
-.main-img-wrapper { 
-    background: #fafafa; 
-    border-radius: 8px; 
-    padding: 20px; 
-    border: 1px solid #eee; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
-    aspect-ratio: 1 / 1; 
-}
+.detail-container { display: grid; grid-template-columns: 420px 1fr; gap: 40px; padding: 30px; max-width: 1200px; margin: 0 auto; }
+.main-img-wrapper { background: #fafafa; border-radius: 8px; padding: 20px; border: 1px solid #eee; display: flex; justify-content: center; align-items: center; aspect-ratio: 1 / 1; }
 .main-img-wrapper img { max-width: 100%; max-height: 100%; object-fit: contain; }
-
 .color-dots { display: flex; gap: 10px; margin-top: 15px; justify-content: center; }
 
-/* 進化点ボックス */
-.update-box {
-    margin-top: 20px;
-    padding: 15px;
-    background: #fdfdfd;
-    border: 1px dashed #ccc;
-    border-radius: 4px;
-}
+.update-box { margin-top: 20px; padding: 15px; background: #fdfdfd; border: 1px dashed #ccc; border-radius: 4px; }
 .update-box h4 { margin: 0 0 10px 0; font-size: 14px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
 .update-box h4 small { color: #888; font-weight: normal; margin-left: 5px; }
 #spike-updates { margin: 0; padding-left: 18px; font-size: 13px; color: #444; }
 
-/* 情報セクション */
 .info-section { display: flex; flex-direction: column; gap: 20px; }
 .chart-box, .specs-box, .desc-box { background: #fff; padding: 20px; border-radius: 8px; border: 1px solid #eee; }
-
 .chart-box { text-align: center; }
 .radar-svg { width: 220px; height: 220px; overflow: visible; }
-
 .specs-box h3, .desc-box h3 { font-size: 16px; margin: 0 0 15px 0; border-left: 4px solid #000; padding-left: 10px; }
 .specs-box table { width: 100%; border-collapse: collapse; font-size: 13px; }
 .specs-box th { text-align: left; padding: 10px; background: #fafafa; border-bottom: 1px solid #eee; width: 30%; color: #666; }
 .specs-box td { padding: 10px; border-bottom: 1px solid #eee; font-weight: bold; }
-
 .desc-box { font-size: 14px; color: #444; }
 .tag-container { display: flex; gap: 8px; margin-top: 15px; flex-wrap: wrap; }
 .tag { background: #000; color: #fff; padding: 4px 12px; border-radius: 15px; font-size: 11px; font-weight: bold; }
 
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; z-index: 2000; }
+.modal-content { background: #fff; padding: 30px; border-radius: 8px; max-width: 500px; width: 90%; text-align: center; }
+
 @media (max-width: 900px) {
     .detail-container { grid-template-columns: 1fr; }
     .main-img-wrapper { aspect-ratio: auto; height: 300px; }
+    .brand-header { padding-left: 40px; } /* スマホでは余白を調整 */
 }
