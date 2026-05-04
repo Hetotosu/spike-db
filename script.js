@@ -54,7 +54,7 @@ const shoeData = {
             "モレリア (MORELIA)": [
                 {
                     id: "m2j", name: "モレリア II JAPAN", price: 24200, img: "m2_j.jpg",
-                    colors: [{img: "m2_j.jpg", color: "#fff"}, {img: "morelia2_black.jpg", color: "#000"}],
+                    colors: [{img: "m2_j.jpg", color: "#fff"}, {img: "m2_j_gold.jpg", color: "#c8a400"}, {img: "m2_j_green.jpg", color: "#2d6a2d"}, {img: "m2_j_red_ag.jpg", color: "#c00"}],
                     eval: [3, 2, 5, 4, 2],
                     desc: "カンガルーレザーアッパー前足部の裏材に高強度の伸び止め材をアップデートし革の伸びすぎを抑制。履き口裏材にスウェード素材を採用することで柔らかな足入れと素足感覚を追求。アウトソール構造も見直し前作比約10gの軽量化を達成。Engineered Fit Lastによる高フィット感で、シューズと足のズレを防ぎ動きの中での反応性を高めます。",
                     specs: { weight: "約215g (27.0cm)", material: "ウォッシャブルカンガルーレザー", ground: "土・人工芝・天然芝" },
@@ -63,7 +63,7 @@ const shoeData = {
                 },
                 {
                     id: "mn4j", name: "モレリア ネオ IV JAPAN", price: 26400, img: "neo4_j.jpg",
-                    colors: [{img: "neo4_j.jpg", color: "#fff"}],
+                    colors: [{img: "neo4_j.jpg", color: "#fff"}, {img: "neo4_j_gold.jpg", color: "#c8a400"}, {img: "neo4_j_black.jpg", color: "#111"}],
                     eval: [5, 3, 5, 4, 3],
                     desc: "ウォッシャブルカンガルーレザーに加え中足部にBFレザーとフレームを搭載し安定感をアップ。BareFoot Knit NEOは足首周りのホールド感に拘ったアッパーパターンにアップデートしシューズと足との一体化を追求。ハトメ構造で屈曲時の皺を最小限に抑えた柔軟なフィット感を実現。アウトソールはY字構造で突き上げ感を減少させ、シャンクのハニカム構造が軽量と剛性を両立。スウェードのインソールとEngineered Fit Lastが素足感覚を完成させます。",
                     specs: { weight: "約195g (27.0cm)", material: "カンガルーレザー×BFレザー", ground: "土・人工芝・天然芝" },
@@ -73,8 +73,13 @@ const shoeData = {
             ],
             "モナルシーダ (MONARCIDA)": [
                 {
-                    id: "m_neo3_elite", name: "モナルシーダ NEO III ELITE", price: 20900, img: "m_neo3_elite.jpg",
-                    colors: [{img: "m_neo3_elite.jpg", color: "#fff"}],
+                    id: "m_neo3_elite", name: "モナルシーダ NEO III ELITE", price: 20900, img: "m_neo3_elite_pink.jpg",
+                    colors: [
+                        {img: "m_neo3_elite_pink.jpg",  color: "#e8457a"},
+                        {img: "m_neo3_elite_green.jpg", color: "#00cc88"},
+                        {img: "m_neo3_elite_gold.jpg",  color: "#c8a400"},
+                        {img: "m_neo3_elite_red.jpg",   color: "#c00"}
+                    ],
                     eval: [4, 2, 4, 4, 4],
                     desc: "ウォッシャブルカンガルーレザーを採用し中足部には柔らかいマイクロファイバー人工皮革を配置。アッパー内部にはMORELIA 2 JAPANと同じマイクロタフタを採用し、縦方向に約3倍の引張強度でカンガルーの伸びを抑制し保形性を向上。ZERO GLIDEインソールが通常比約2.5倍のグリップ性を発揮しシューズ内での足のズレを軽減。Engineered Fit Lastによる高いフィット感を実現します。",
                     specs: { weight: "約200g (27.0cm)", material: "カンガルーレザー", ground: "オールグラウンド対応" },
@@ -82,8 +87,12 @@ const shoeData = {
                     updates: ["アッパーのステッチ形状を見直し"]
                 },
                 {
-                    id: "m_neo3_pro", name: "モナルシーダ NEO III PRO", price: 14850, img: "m_neo3_pro.jpg",
-                    colors: [{img: "m_neo3_pro.jpg", color: "#fff"}],
+                    id: "m_neo3_pro", name: "モナルシーダ NEO III PRO", price: 14850, img: "m_neo3_pro_white.jpg",
+                    colors: [
+                        {img: "m_neo3_pro_white.jpg", color: "#fff"},
+                        {img: "m_neo3_pro_gold.jpg",  color: "#c8a400"},
+                        {img: "m_neo3_pro_red.jpg",   color: "#c00"}
+                    ],
                     eval: [4, 2, 3, 4, 5],
                     desc: "アッパーにマイクロファイバー人工皮革を採用。履き口の人工スエード素材が柔らかい足あたりを実現し、踵スポンジ構造の改善でさらなるフィット感を追求。ZERO GLIDE LITEカップインソールが通常比1.5倍のグリップ力でシューズ内の横ズレを軽減。Engineered Fit Lastを搭載したコストパフォーマンスに優れたモデルです。",
                     specs: { weight: "約195g (27.0cm)", material: "マイクロファイバー×人工皮革", ground: "オールグラウンド対応" },
@@ -91,8 +100,12 @@ const shoeData = {
                     updates: ["NEO IIIへのアップデートによるホールド感向上"]
                 },
                 {
-                    id: "m_neo3_select", name: "モナルシーダ NEO III SELECT", price: 9350, img: "m_neo3_select.jpg",
-                    colors: [{img: "m_neo3_select.jpg", color: "#fff"}],
+                    id: "m_neo3_select", name: "モナルシーダ NEO III SELECT", price: 9350, img: "m_neo3_select_pink.jpg",
+                    colors: [
+                        {img: "m_neo3_select_pink.jpg",  color: "#e8457a"},
+                        {img: "m_neo3_select_white.jpg", color: "#fff"},
+                        {img: "m_neo3_select_black.jpg", color: "#111"}
+                    ],
                     eval: [2, 2, 3, 5, 5],
                     desc: "柔らかな足入れを実現するワイドラストを採用。モレリアネオ4のアッパーパターンをフォローしたシンプル設計で柔らかなフィット感を追求。ハトメ端部をハの字形状に再設計し屈曲時に足に沿うフィット感を実現。ZERO GLIDE LITEカップインソール（取り外し可）が通常比1.5倍のグリップ力で横ズレを軽減。耐久性のあるSELECT専用ソールで毎日の練習に対応します。",
                     specs: { weight: "約235g (27.0cm)", material: "人工皮革", ground: "オールグラウンド対応" },
@@ -104,8 +117,12 @@ const shoeData = {
         Asics: {
             "X-FLY シリーズ": [
                 {
-                    id: "xf6", name: "DS LIGHT X-FLY 6", price: 23000, img: "x-fly6.jpg",
-                    colors: [{img: "x-fly6.jpg", color: "#fff"}],
+                    id: "xf6", name: "DS LIGHT X-FLY 6", price: 23000, img: "x-fly6_yellow.jpg",
+                    colors: [
+                        {img: "x-fly6.jpg",        color: "#fff"},
+                        {img: "x-fly6_yellow.jpg", color: "#ccff00"},
+                        {img: "x-fly6_green.jpg",  color: "#00cc88"}
+                    ],
                     eval: [4, 3, 5, 5, 3],
                     desc: "SILKYWRAP採用で雨による型崩れや過度な伸びを抑制。STABILITY SOLEが内ねじれを許容しながら外ねじれを抑制し、切り返し時の安定性を確保。外付けヒールカウンターがフラットな接地感と強靭な反発性を発揮。シュータンには柔らかい人工スエードとスポンジ素材を採用し快適な足入れを実現します。",
                     specs: { weight: "約205g (27.0cm)", material: "SILKYWRAP (人工皮革)", ground: "天然芝・人工芝・土" },
@@ -113,8 +130,14 @@ const shoeData = {
                     updates: ["新素材SILKYWRAPの採用", "3D縫製技術採用", "ヒールカウンター一体型ソール"]
                 },
                 {
-                    id: "xfp3", name: "DS LIGHT X-FLY PRO 3", price: 24000, img: "x-flypro3.jpg",
-                    colors: [{img: "x-flypro3.jpg", color: "#fff"}],
+                    id: "xfp3", name: "DS LIGHT X-FLY PRO 3", price: 24000, img: "x-flypro3_brown.jpg",
+                    colors: [
+                        {img: "x-flypro3.jpg",       color: "#c8a400"},
+                        {img: "x-flypro3_brown.jpg", color: "#8B5e3c"},
+                        {img: "x-flypro3_red.jpg",   color: "#c00"},
+                        {img: "x-flypro3_pink.jpg",  color: "#e8457a"},
+                        {img: "x-flypro3_green.jpg", color: "#00cc88"}
+                    ],
                     eval: [5, 4, 4, 4, 3],
                     desc: "SILKYWRAP採用で雨による型崩れや過度な伸びを抑制。つま先から2列目のスタッドをブレード形状に近づけ角度も蹴り出し方向へグリップが効くように設計。大胆にくり抜かれたアウトソールが軽量性と屈曲性を生み出し、超薄型×高硬度仕様でスプリント時に必要な反発性を実現するオールコートモデルです。",
                     specs: { weight: "約190g (27.0cm)", material: "SILKYWRAP (人工皮革)", ground: "天然芝・人工芝・土" },
@@ -124,8 +147,11 @@ const shoeData = {
             ],
             "ACROS シリーズ": [
                 {
-                    id: "ac3", name: "DS LIGHT ACROS 3", price: 19800, img: "acros3.jpg",
-                    colors: [{img: "acros3.jpg", color: "#fff"}],
+                    id: "ac3", name: "DS LIGHT ACROS 3", price: 19800, img: "acros3_green.jpg",
+                    colors: [
+                        {img: "acros3.jpg",       color: "#fff"},
+                        {img: "acros3_green.jpg", color: "#00cc88"}
+                    ],
                     eval: [3, 3, 5, 5, 3],
                     desc: "カットインモーション時の横ブレを軽減する設計。アッパー内側の補強材を薄く、外側を厚くすることで強度差をつけ、切り返し時に内側は足に寄り添い外側は剛性を発揮。外付けヒールカウンターがフラットな接地感と強靭な反発性を提供します。",
                     specs: { weight: "約225g (27.0cm)", material: "ACROS FIT (人工皮革)", ground: "天然芝・人工芝・土" },
@@ -133,8 +159,13 @@ const shoeData = {
                     updates: ["補強材配置見直し", "動的フィッティングの進化"]
                 },
                 {
-                    id: "acp3", name: "DS LIGHT ACROS PRO 3", price: 22000, img: "acrospro3.jpg",
-                    colors: [{img: "acrospro3.jpg", color: "#fff"}],
+                    id: "acp3", name: "DS LIGHT ACROS PRO 3", price: 22000, img: "acrospro3_red.jpg",
+                    colors: [
+                        {img: "acrospro3.jpg",        color: "#c8a400"},
+                        {img: "acrospro3_red.jpg",    color: "#c00"},
+                        {img: "acrospro3_blue.jpg",   color: "#1a6fc4"},
+                        {img: "acrospro3_purple.jpg", color: "#8800cc"}
+                    ],
                     eval: [4, 4, 4, 4, 3],
                     desc: "ACROS 3と同様にアッパー内側を薄く・外側を厚くした非対称補強で切り返し時の安定性を確保。樹脂製プレートを大きくくり抜いて軽量化しながら中部をN字型に成型することで剛性を高め過度なねじれを抑制。つま先先端の変形円柱型スタッドとブレード型サブスタッドが蹴り出し時のパワーを最後までピッチに伝えます。",
                     specs: { weight: "約200g (27.0cm)", material: "ACROS FIT (人工皮革)", ground: "天然芝・人工芝・土" },
@@ -144,8 +175,12 @@ const shoeData = {
             ],
             "DS LIGHT シリーズ": [
                 {
-                    id: "dsl_pro", name: "DS LIGHT PRO", price: 15400, img: "pro.jpg",
-                    colors: [{img: "pro.jpg", color: "#fff"}],
+                    id: "dsl_pro", name: "DS LIGHT PRO", price: 15400, img: "pro_green.jpg",
+                    colors: [
+                        {img: "pro.jpg",       color: "#fff"},
+                        {img: "pro_green.jpg", color: "#00cc88"},
+                        {img: "pro_blue.jpg",  color: "#1a6fc4"}
+                    ],
                     eval: [3, 2, 4, 5, 4],
                     desc: "SILKYWRAPを採用し雨による型崩れや過度な伸びを抑制。かかとのGELが足への負担を軽減。つま先上部の落ち込みを軽減した新設計のラストが足の形により沿ったフィット感を実現します。",
                     specs: { weight: "約225g (27.0cm)", material: "SILKYWRAP×人工皮革", ground: "天然芝・人工芝・土" },
@@ -153,8 +188,11 @@ const shoeData = {
                     updates: ["SILKYWRAP採用", "fuzeGEL最適配置"]
                 },
                 {
-                    id: "dsl_adv", name: "DS LIGHT ADVANCE", price: 11000, img: "advance.jpg",
-                    colors: [{img: "advance.jpg", color: "#fff"}],
+                    id: "dsl_adv", name: "DS LIGHT ADVANCE", price: 11000, img: "advance_black.jpg",
+                    colors: [
+                        {img: "advance.jpg",       color: "#fff"},
+                        {img: "advance_black.jpg", color: "#111"}
+                    ],
                     eval: [2, 2, 3, 5, 5],
                     desc: "前足部にストレッチャブル仕様の人工皮革を採用し、かかとのGELが足への負担を軽減。シンプルな設計で毎日の練習に対応するエントリーモデルです。",
                     specs: { weight: "約235g (27.0cm)", material: "マイクロファイバー×人工皮革", ground: "天然芝・人工芝・土" },
@@ -162,8 +200,12 @@ const shoeData = {
                     updates: ["耐摩耗ウレタンソール採用", "バンプエリア拡張"]
                 },
                 {
-                    id: "dsl_club", name: "DS LIGHT CLUB", price: 8800, img: "club.jpg",
-                    colors: [{img: "club.jpg", color: "#fff"}],
+                    id: "dsl_club", name: "DS LIGHT CLUB", price: 8800, img: "club_black.jpg",
+                    colors: [
+                        {img: "club.jpg",       color: "#fff"},
+                        {img: "club_black.jpg", color: "#111"},
+                        {img: "club_blue.jpg",  color: "#1a6fc4"}
+                    ],
                     eval: [2, 2, 2, 5, 5],
                     desc: "前足部にストレッチャブル仕様の人工皮革を採用し、かかとのGELが足への負担を軽減。DS LIGHTシリーズの入口となるベーシックモデルで、初めてのスパイクとして幅広いプレーヤーに対応します。",
                     specs: { weight: "約245g (27.0cm)", material: "人工皮革", ground: "天然芝・人工芝・土" },
@@ -175,8 +217,12 @@ const shoeData = {
         Adidas: {
             "PREDATOR": [
                 {
-                    id: "pred_elite", name: "プレデター エリート", price: 31900, img: "predator_elite.jpg",
-                    colors: [{img: "predator_elite.jpg", color: "#000"}],
+                    id: "pred_elite", name: "プレデター エリート", price: 31900, img: "predator_elite_green.jpg",
+                    colors: [
+                        {img: "predator_elite.jpg",       color: "#000"},
+                        {img: "predator_elite_green.jpg", color: "#7ecef4"},
+                        {img: "predator_elite_red.jpg",   color: "#e8004d"}
+                    ],
                     eval: [3, 5, 4, 4, 2],
                     desc: "グリップゾーンと一体型のソフトな軽量アッパーがCONTROLFRAMEと組み合わさり、自在なボールコントロールとキックのパワー・精度をサポート。硬さのあるHG/AGでの最適なグリップ性と耐久性を実現し、前足部内側のトライアングルスタッドの円形配置が前後左右のモーションやターンに貢献。360°素足感覚を追求したEngineered Fit Lastが高いフィット感とシューズと足のズレを防ぎ、動きの中での反応性を高めます。",
                     specs: { weight: "約225g (27.0cm)", material: "合成皮革＋CONTROLFRAMEテクスチャー", ground: "天然芝" },
@@ -204,8 +250,11 @@ const shoeData = {
             ],
             "コパアイコン2": [
                 {
-                    id: "copa_elite", name: "コパアイコン2 エリート", price: 29700, img: "copaicon_elite.jpg",
-                    colors: [{img: "copaicon_elite.jpg", color: "#d4af37"}],
+                    id: "copa_elite", name: "コパアイコン2 エリート", price: 29700, img: "copaicon_elite_green.jpg",
+                    colors: [
+                        {img: "copaicon_elite.jpg",       color: "#d4af37"},
+                        {img: "copaicon_elite_green.jpg", color: "#00cc44"}
+                    ],
                     eval: [3, 3, 5, 4, 2],
                     desc: "かかと・中足部のパッドを薄くし足との一体感を追求。踵周りには広範囲にウレタンフォームを搭載しフィット感を強化。短めのシュータンで足首周りの可動を確保。360°素足感覚のEngineered Fit Lastを採用。前足部内側のピヴォットスタッドが前後左右のモーションをサポート。シューホールのジグザグ配置でシューレース調整の自由度を高め、縦横のステッチ加工で型崩れを防止。<br>エリートは柔らかな天然皮革（カウレザー）を前足部とシュータンに採用。足全体の馴染みが早く素足感覚のフィーリングをもたらします。",
                     specs: { weight: "約215g (27.0cm)", material: "OT LEATHER（カンガルーレザー）", ground: "天然芝" },
@@ -213,8 +262,12 @@ const shoeData = {
                     updates: ["OT LEATHER改良", "ヒールカウンター軽量化", "ソール屈曲性向上"]
                 },
                 {
-                    id: "copa_pro", name: "コパアイコン2 プロ", price: 17600, img: "copaicon_pro.jpg",
-                    colors: [{img: "copaicon_pro.jpg", color: "#d4af37"}],
+                    id: "copa_pro", name: "コパアイコン2 プロ", price: 17600, img: "copaicon_pro_white.jpg",
+                    colors: [
+                        {img: "copaicon_pro.jpg",       color: "#d4af37"},
+                        {img: "copaicon_pro_white.jpg", color: "#fff"},
+                        {img: "copaicon_pro_green.jpg", color: "#00cc44"}
+                    ],
                     eval: [3, 3, 4, 4, 3],
                     desc: "エリートと同じ足型設計・スタッド配置・ジグザグシューホールを継承しつつ、アッパーにマイクロファイバー人工皮革を採用。メンテナンスフリーで雨天時も安定したボールタッチを発揮するミドルモデルです。",
                     specs: { weight: "約225g (27.0cm)", material: "マイクロファイバー人工皮革", ground: "天然芝・人工芝" },
@@ -233,8 +286,12 @@ const shoeData = {
             ],
             "F50": [
                 {
-                    id: "f50_elite", name: "F50 エリート", price: 28600, img: "f50_elite.jpg",
-                    colors: [{img: "f50_elite.jpg", color: "#fff"}],
+                    id: "f50_elite", name: "F50 エリート", price: 28600, img: "f50_elite_blue.jpg",
+                    colors: [
+                        {img: "f50_elite.jpg",        color: "#fff"},
+                        {img: "f50_elite_blue.jpg",   color: "#1a8ce8"},
+                        {img: "f50_elite_orange.jpg", color: "#ff7040"}
+                    ],
                     eval: [5, 3, 3, 3, 2],
                     desc: "エンジニアードメッシュに表面加工を施した軽量アッパーが必要な箇所にサポートを提供しスピードに貢献。中足部を覆う伸縮素材にTPUで補強を施したトンネル型シュータンがフィット性とホールド性を両立。前足部内側のトライアングルスタッドの円形配置が前後左右のモーション・ターンに貢献する、硬グラウンド（HG/AG）向けスピードモデル。",
                     specs: { weight: "約185g (27.0cm)", material: "ファイバータッチアッパー", ground: "天然芝・人工芝" },
@@ -242,8 +299,11 @@ const shoeData = {
                     updates: ["スプリントウェブ採用", "全モデル中トップクラスの軽量化"]
                 },
                 {
-                    id: "f50_pro", name: "F50 プロ", price: 16500, img: "f50_pro.jpg",
-                    colors: [{img: "f50_pro.jpg", color: "#fff"}],
+                    id: "f50_pro", name: "F50 プロ", price: 16500, img: "f50_pro_purple.jpg",
+                    colors: [
+                        {img: "f50_pro.jpg",        color: "#fff"},
+                        {img: "f50_pro_purple.jpg", color: "#6633cc"}
+                    ],
                     eval: [4, 2, 3, 3, 3],
                     desc: "スピードモデルF50の性能を身近な価格で。軽量性を重視した設計はELITEの思想を継承。",
                     specs: { weight: "約205g (27.0cm)", material: "合成皮革", ground: "天然芝・人工芝" },
@@ -251,8 +311,12 @@ const shoeData = {
                     updates: ["アッパー素材バランス最適化", "グリップ性改善"]
                 },
                 {
-                    id: "f50_league", name: "F50 リーグ", price: 8800, img: "f50_league.jpg",
-                    colors: [{img: "f50_league.jpg", color: "#fff"}],
+                    id: "f50_league", name: "F50 リーグ", price: 8800, img: "f50_league_orange.jpg",
+                    colors: [
+                        {img: "f50_league.jpg",        color: "#fff"},
+                        {img: "f50_league_orange.jpg", color: "#ff7040"},
+                        {img: "f50_league_purple.jpg", color: "#6633cc"}
+                    ],
                     eval: [3, 2, 2, 5, 5],
                     desc: "F50のエントリーモデル。高耐久ソールで毎日の練習に対応。",
                     specs: { weight: "約255g (27.0cm)", material: "人工皮革", ground: "天然芝・人工芝・土" },
@@ -264,8 +328,11 @@ const shoeData = {
         Nike: {
             "Mercurial": [
                 {
-                    id: "vapor_elite", name: "ヴェイパー エリート", price: 33000, img: "vapor_elite.jpg",
-                    colors: [{img: "vapor_elite.jpg", color: "#f60"}],
+                    id: "vapor_elite", name: "ヴェイパー エリート", price: 33000, img: "vapor_elite_brown.jpg",
+                    colors: [
+                        {img: "vapor_elite.jpg",       color: "#f60"},
+                        {img: "vapor_elite_brown.jpg", color: "#e8457a"}
+                    ],
                     eval: [5, 2, 3, 3, 2],
                     desc: "新マーキュリアルでは『エアズーム ストロベル』から屈曲溝を取り除くことによりブーツ前足部にスピードフィンを追加しプレートの屈曲性を最適化。これにより前作比エネルギーリターンが10%向上。フライニットアッパーの層数を5層から3層に削減することで約30%軽量化し、ナイキフットボール史上最も軽く薄いフライニットアッパーを実現。素足を感じるシューズを求めるスプリンター向けトップモデル。",
                     specs: { weight: "約178g (27.0cm)", material: "ヴェイパーポジット（合成皮革）", ground: "天然芝" },
@@ -273,8 +340,11 @@ const shoeData = {
                     updates: ["エアズームの配置最適化", "アッパー縫製変更", "スタッド角度調整"]
                 },
                 {
-                    id: "vapor_pro", name: "ヴェイパー プロ", price: 19800, img: "vapor_pro.jpg",
-                    colors: [{img: "vapor_pro.jpg", color: "#f60"}],
+                    id: "vapor_pro", name: "ヴェイパー プロ", price: 19800, img: "vapor_pro_blue.jpg",
+                    colors: [
+                        {img: "vapor_pro.jpg",      color: "#f60"},
+                        {img: "vapor_pro_blue.jpg", color: "#7b9fe8"}
+                    ],
                     eval: [4, 2, 3, 3, 3],
                     desc: "エリートの加速感を日常使いできるミドルモデル。",
                     specs: { weight: "約200g (27.0cm)", material: "合成皮革", ground: "天然芝・人工芝" },
@@ -282,8 +352,13 @@ const shoeData = {
                     updates: ["スタッド配置改善", "アッパー耐久性向上"]
                 },
                 {
-                    id: "vapor_academy", name: "ヴェイパー アカデミー", price: 7700, img: "vapor_academy.jpg",
-                    colors: [{img: "vapor_academy.jpg", color: "#f60"}],
+                    id: "vapor_academy", name: "ヴェイパー アカデミー", price: 7700, img: "vapor_academy_yellow.jpg",
+                    colors: [
+                        {img: "vapor_academy.jpg",        color: "#ccff00"},
+                        {img: "vapor_academy_blue.jpg",   color: "#1a6fc4"},
+                        {img: "vapor_academy_pink.jpg",   color: "#e8457a"},
+                        {img: "vapor_academy_yellow.jpg", color: "#ccff00"}
+                    ],
                     eval: [3, 2, 2, 5, 5],
                     desc: "Zoom Airユニットをアウトソールに搭載し足裏の反発性を強化。NikeSkinアッパーが素足でサッカーをしているような感覚でボールをコントロールできる設計。内部のスピードケージが軽さを損なわず足をアウトソールに固定し、独自のトラクションパターンが硬い土でも抜群のグリップを発揮します。",
                     specs: { weight: "約255g (27.0cm)", material: "人工皮革", ground: "天然芝・人工芝・土" },
@@ -293,8 +368,11 @@ const shoeData = {
             ],
             "Phantom": [
                 {
-                    id: "phantom_elite", name: "ファントム エリート", price: 31130, img: "phantom_elite.jpg",
-                    colors: [{img: "phantom_elite.jpg", color: "#444"}],
+                    id: "phantom_elite", name: "ファントム エリート", price: 31130, img: "phantom_elite_yellow.jpg",
+                    colors: [
+                        {img: "phantom_elite.jpg",        color: "#444"},
+                        {img: "phantom_elite_yellow.jpg", color: "#e8457a"}
+                    ],
                     eval: [3, 5, 4, 3, 2],
                     desc: "Cyclone 360の円形トラクションパターンがスピーディーな踏み込みとピボットをサポート。エンジニアードメッシュにNikeSkinのタッチゾーンを広くした設計でボールコントロールを強化。トゥボックスなど自然なフィット感を実現する構造で、足の形に沿ってフィットしボールタッチの精度をさらに向上させます。",
                     specs: { weight: "約220g (27.0cm)", material: "ナイキ グリップニット", ground: "天然芝" },
@@ -302,8 +380,12 @@ const shoeData = {
                     updates: ["グリップニットにマイクロモールディング加工追加", "Cyclone 360採用", "非対称レーシング採用"]
                 },
                 {
-                    id: "phantom_pro", name: "ファントム プロ", price: 17600, img: "phantom_pro.jpg",
-                    colors: [{img: "phantom_pro.jpg", color: "#444"}],
+                    id: "phantom_pro", name: "ファントム プロ", price: 17600, img: "phantom_pro_blue.jpg",
+                    colors: [
+                        {img: "phantom_pro.jpg",      color: "#444"},
+                        {img: "phantom_pro_blue.jpg", color: "#1a6fc4"},
+                        {img: "phantom_pro_red.jpg",  color: "#c00"}
+                    ],
                     eval: [3, 4, 3, 3, 3],
                     desc: "グリップ加工合成皮革がボールタッチをサポートするミドルモデル。",
                     specs: { weight: "約235g (27.0cm)", material: "合成皮革＋グリップ加工", ground: "天然芝・人工芝" },
@@ -311,8 +393,12 @@ const shoeData = {
                     updates: ["グリップ加工範囲拡大", "アウトソール耐久性向上"]
                 },
                 {
-                    id: "phantom_academy", name: "ファントム アカデミー", price: 8250, img: "phantom_academy.jpg",
-                    colors: [{img: "phantom_academy.jpg", color: "#444"}],
+                    id: "phantom_academy", name: "ファントム アカデミー", price: 8250, img: "phantom_academy_blue.jpg",
+                    colors: [
+                        {img: "phantom_academy.jpg",      color: "#444"},
+                        {img: "phantom_academy_blue.jpg", color: "#1a6fc4"},
+                        {img: "phantom_academy_red.jpg",  color: "#c00"}
+                    ],
                     eval: [2, 3, 2, 5, 5],
                     desc: "コントロール系スパイクの入門モデル。高耐久設計で練習用として最適。",
                     specs: { weight: "約260g (27.0cm)", material: "人工皮革", ground: "天然芝・人工芝・土" },
@@ -322,8 +408,11 @@ const shoeData = {
             ],
             "Tiempo": [
                 {
-                    id: "tiempo_elite", name: "ティエンポ エリート", price: 28600, img: "tiempo_elite.jpg",
-                    colors: [{img: "tiempo_elite.jpg", color: "#8B4513"}],
+                    id: "tiempo_elite", name: "ティエンポ エリート", price: 28600, img: "tiempo_elite_blue.jpg",
+                    colors: [
+                        {img: "tiempo_elite.jpg",      color: "#8B4513"},
+                        {img: "tiempo_elite_blue.jpg", color: "#1a6fc4"}
+                    ],
                     eval: [3, 3, 5, 4, 2],
                     desc: "軽量のFly Touchエンジニアードレザーは驚くほど柔らかく、濡れた状態でも乾いた状態でも安定したボールタッチを提供。Fly Touchレザーが足にぴったりフィットし、ニットシュータンと連動して足をしっかり固定。かかとと前足部のブレードタイプスタッドがトラクションを提供し、ねじれた円錐形スタッドがスムーズな踏み込みとピボットをサポートします。",
                     specs: { weight: "約215g (27.0cm)", material: "カンガルーレザー", ground: "天然芝" },
@@ -331,8 +420,11 @@ const shoeData = {
                     updates: ["ヒールカウンター形状改良", "スタッド配置最適化"]
                 },
                 {
-                    id: "tiempo_pro", name: "ティエンポ プロ", price: 16500, img: "tiempo_pro.jpg",
-                    colors: [{img: "tiempo_pro.jpg", color: "#8B4513"}],
+                    id: "tiempo_pro", name: "ティエンポ プロ", price: 16500, img: "tiempo_pro_blue.jpg",
+                    colors: [
+                        {img: "tiempo_pro.jpg",      color: "#8B4513"},
+                        {img: "tiempo_pro_blue.jpg", color: "#1a6fc4"}
+                    ],
                     eval: [3, 3, 4, 4, 3],
                     desc: "マイクロファイバー人工皮革が天然皮革に近い感触を実現。メンテフリーで雨天時も安定。",
                     specs: { weight: "約230g (27.0cm)", material: "マイクロファイバー人工皮革", ground: "天然芝・人工芝" },
@@ -340,8 +432,12 @@ const shoeData = {
                     updates: ["マイクロファイバー質感向上", "反発性改善"]
                 },
                 {
-                    id: "tiempo_academy", name: "ティエンポ アカデミー", price: 8250, img: "tiempo_academy.jpg",
-                    colors: [{img: "tiempo_academy.jpg", color: "#8B4513"}],
+                    id: "tiempo_academy", name: "ティエンポ アカデミー", price: 8250, img: "tiempo_academy_black.jpg",
+                    colors: [
+                        {img: "tiempo_academy.jpg",       color: "#8B4513"},
+                        {img: "tiempo_academy_black.jpg", color: "#111"},
+                        {img: "tiempo_academy_blue.jpg",  color: "#1a6fc4"}
+                    ],
                     eval: [2, 2, 3, 5, 5],
                     desc: "ティエンポシリーズの入門モデル。幅広対応で初心者に安心。",
                     specs: { weight: "約260g (27.0cm)", material: "人工皮革", ground: "天然芝・人工芝・土" },
@@ -1131,7 +1227,7 @@ function renderDetail(sport, brand, series, id) {
 // ============================================================
 function drawChart(scores, sport) {
     const labels = chartConfig[sport]?.labels || ["項目1","項目2","項目3","項目4","項目5"];
-    const size = 320;
+    const size = 340;
     const center = size / 2;
     const maxRadius = 90;
     const levels = 5;
@@ -1172,13 +1268,15 @@ function drawChart(scores, sport) {
     scores.forEach((s, i) => {
         const p = getPoint(s, i);
         const angle = startAngle + step * i;
-        const nx = p.x + 22 * Math.cos(angle);
-        const ny = p.y + 22 * Math.sin(angle);
+        // 数値は常にスコア頂点から外側に14px固定（スコアに関わらず頂点の近く）
+        const offset = 14;
+        const nx = p.x + offset * Math.cos(angle);
+        const ny = p.y + offset * Math.sin(angle);
         dots += `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="4" fill="#111"/>`;
         nums += `<text x="${nx.toFixed(1)}" y="${ny.toFixed(1)}" text-anchor="middle" dominant-baseline="middle" font-size="11" font-weight="bold" fill="#111">${s}</text>`;
     });
 
-    const labelR = maxRadius + 46;
+    const labelR = maxRadius + 58;
     let labelsSvg = '';
     for (let i = 0; i < n; i++) {
         const angle = startAngle + step * i;
