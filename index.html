@@ -3,88 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soccer Spike DB 2026</title>
+    <title>Shoes DB</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <div class="header-left">
-            <button class="nav-icon-btn" onclick="showHome()">HOME</button>
+            <button class="nav-icon-btn" onclick="showTop()">TOP</button>
             <button class="nav-icon-btn" onclick="goBack()">BACK</button>
         </div>
-        <div class="logo" onclick="showHome()">SPIKE DB</div>
-        <nav>
-            <div class="diagnosis-button" onclick="alert('スパイク診断機能は準備中です')">スパイク診断</div>
-        </nav>
+        <div class="logo" onclick="showTop()">SHOES DB</div>
+        <div class="header-right"></div>
     </header>
 
     <main id="main-container">
-        <div id="home-view">
-            <section class="hero">
-                <div class="hero-content">
-                    <h1>Soccer Spike Performance Database</h1>
-                    <p>最新モデルの技術と進化を解き明かす。</p>
+
+        <!-- TOP: スポーツ選択 -->
+        <div id="top-view">
+            <section class="top-hero">
+                <div class="top-hero-content">
+                    <h1>Performance Shoes Database</h1>
+                    <p>スポーツを選んでシューズを探そう</p>
                 </div>
             </section>
-            <div class="selection-grid">
-                <div class="brand-card" onclick="showBrandPage('Mizuno')">
-                    <img src="image/mizuno_logo.png" alt="MIZUNO" class="brand-logo-img">
+            <div class="sport-grid">
+                <div class="sport-card" onclick="showSportHome('soccer')">
+                    <div class="sport-icon">⚽</div>
+                    <div class="sport-label">サッカー</div>
+                    <div class="sport-sub">Soccer Spikes</div>
                 </div>
-                <div class="brand-card" onclick="showBrandPage('Asics')">
-                    <img src="image/asics_logo.png" alt="ASICS" class="brand-logo-img">
+                <div class="sport-card" onclick="showSportHome('basketball')">
+                    <div class="sport-icon">🏀</div>
+                    <div class="sport-label">バスケットボール</div>
+                    <div class="sport-sub">Basketball Shoes</div>
                 </div>
-                <div class="brand-card" onclick="showBrandPage('Adidas')">
-                    <img src="image/adidas_logo.png" alt="ADIDAS" class="brand-logo-img">
+                <div class="sport-card" onclick="showSportHome('volleyball')">
+                    <div class="sport-icon">🏐</div>
+                    <div class="sport-label">バレーボール</div>
+                    <div class="sport-sub">Volleyball Shoes</div>
                 </div>
-                <div class="brand-card" onclick="showBrandPage('Nike')">
-                    <img src="image/nike_logo.png" alt="NIKE" class="brand-logo-img">
+                <div class="sport-card" onclick="showSportHome('tennis')">
+                    <div class="sport-icon">🎾</div>
+                    <div class="sport-label">テニス</div>
+                    <div class="sport-sub">Tennis Shoes</div>
                 </div>
-                <div class="brand-card" onclick="showBrandPage('Puma')">
-                    <img src="image/puma_logo.png" alt="PUMA" class="brand-logo-img">
+                <div class="sport-card" onclick="showSportHome('badminton')">
+                    <div class="sport-icon">🏸</div>
+                    <div class="sport-label">バドミントン</div>
+                    <div class="sport-sub">Badminton Shoes</div>
                 </div>
             </div>
         </div>
 
+        <!-- SPORT HOME: ブランド選択 -->
+        <div id="sport-home-view" style="display:none;">
+            <section class="sport-hero" id="sport-hero-banner">
+                <div class="hero-content">
+                    <h1 id="sport-hero-title"></h1>
+                    <p id="sport-hero-sub"></p>
+                </div>
+            </section>
+            <div class="selection-grid" id="brand-grid"></div>
+        </div>
+
+        <!-- BRAND: シリーズ一覧 -->
         <div id="brand-view" style="display:none;">
             <div class="brand-header"><h2 id="brand-title"></h2></div>
             <div id="brand-content"></div>
         </div>
 
+        <!-- DETAIL: シューズ詳細 -->
         <div id="detail-view" style="display:none;">
             <div class="detail-header"><h2 id="detail-title"></h2></div>
             <div class="detail-container">
                 <div class="image-section">
                     <div class="main-img-wrapper">
-                        <img id="main-spike-img" src="" alt="spike">
+                        <img id="main-shoe-img" src="" alt="shoe">
                     </div>
                     <div id="color-variants" class="color-dots"></div>
-
                     <div class="update-box">
                         <h4>Evolution <small>前作からの進化点</small></h4>
-                        <ul id="spike-updates"></ul>
+                        <ul id="shoe-updates"></ul>
                     </div>
                 </div>
-                
                 <div class="info-section">
                     <div class="chart-box">
                         <h3>Performance Chart</h3>
                         <div id="radar-chart-area"></div>
                     </div>
-                    
                     <div class="specs-box">
                         <h3>Specifications</h3>
-                        <table id="spike-specs-table"></table>
+                        <table id="shoe-specs-table"></table>
                     </div>
-
                     <div class="desc-box">
                         <h3>Product Analysis</h3>
-                        <p id="spike-description"></p>
-                        <div id="recommend-position" class="tag-container"></div>
+                        <p id="shoe-description"></p>
+                        <div id="recommend-tags" class="tag-container"></div>
                     </div>
                 </div>
             </div>
         </div>
+
     </main>
 
     <div id="tech-modal" class="modal-overlay" style="display:none;" onclick="closePopup()">
