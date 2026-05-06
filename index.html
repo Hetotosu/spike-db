@@ -77,29 +77,35 @@
         <div id="detail-view" style="display:none;">
             <div class="detail-header"><h2 id="detail-title"></h2></div>
             <div class="detail-container">
-                <div class="image-section">
-                    <div class="main-img-wrapper">
-                        <img id="main-shoe-img" src="" alt="shoe">
-                    </div>
-                    <div id="color-variants" class="color-dots"></div>
-                    <div class="update-box">
-                        <h4>Evolution <small>前作からの進化点</small></h4>
-                        <ul id="shoe-updates"></ul>
-                    </div>
-                </div>
                 <div class="info-section">
                     <div class="chart-box">
-                        <h3>Performance Chart</h3>
+                        <div class="section-header">
+                            <h3>Performance Chart</h3>
+                            <div class="grade-switcher-slot" data-switcher></div>
+                        </div>
                         <div id="radar-chart-area"></div>
                     </div>
                     <div class="specs-box">
-                        <h3>Specifications</h3>
+                        <div class="section-header">
+                            <h3>Specifications</h3>
+                            <div class="grade-switcher-slot" data-switcher></div>
+                        </div>
                         <table id="shoe-specs-table"></table>
                     </div>
                     <div class="desc-box">
-                        <h3>Product Analysis</h3>
+                        <div class="section-header">
+                            <h3>Product Analysis</h3>
+                            <div class="grade-switcher-slot" data-switcher></div>
+                        </div>
                         <p id="shoe-description"></p>
                         <div id="recommend-tags" class="tag-container"></div>
+                    </div>
+                    <div class="update-box">
+                        <div class="section-header">
+                            <h4>Evolution <small>前作からの進化点</small></h4>
+                            <div class="grade-switcher-slot" data-switcher></div>
+                        </div>
+                        <ul id="shoe-updates"></ul>
                     </div>
                 </div>
             </div>

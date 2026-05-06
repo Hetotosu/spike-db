@@ -44,6 +44,57 @@ const brandLogoMap = {
 };
 
 // ============================================================
+//  LINEUP MAP (サッカー専用 — グレード違いを1つにまとめる)
+// ============================================================
+const lineupMap = {
+    // Mizuno
+    'm_neo3_elite':  'モナルシーダ NEO III',
+    'm_neo3_pro':    'モナルシーダ NEO III',
+    'm_neo3_select': 'モナルシーダ NEO III',
+    // Asics DS LIGHT
+    'dsl_pro':  'DS LIGHT',
+    'dsl_adv':  'DS LIGHT',
+    'dsl_club': 'DS LIGHT',
+    // Adidas
+    'pred_elite':  'プレデター',
+    'pred_pro':    'プレデター',
+    'pred_league': 'プレデター',
+    'copa_elite':  'コパアイコン2',
+    'copa_pro':    'コパアイコン2',
+    'copa_league': 'コパアイコン2',
+    'f50_elite':   'F50',
+    'f50_pro':     'F50',
+    'f50_league':  'F50',
+    // Nike
+    'vapor_elite':     'マーキュリアル ヴェイパー',
+    'vapor_pro':       'マーキュリアル ヴェイパー',
+    'vapor_academy':   'マーキュリアル ヴェイパー',
+    'phantom_elite':   'ファントム',
+    'phantom_pro':     'ファントム',
+    'phantom_academy': 'ファントム',
+    'tiempo_elite':    'ティエンポ',
+    'tiempo_pro':      'ティエンポ',
+    'tiempo_academy':  'ティエンポ',
+    // Puma
+    'future_ultimate': 'フューチャー',
+    'future_pro':      'フューチャー',
+    'future_match':    'フューチャー',
+    'ultra_ultimate':  'ウルトラ',
+    'ultra_pro':       'ウルトラ',
+    'ultra_match':     'ウルトラ'
+};
+
+function getLineup(shoe) {
+    return lineupMap[shoe.id] || shoe.name;
+}
+
+function getGrade(shoe) {
+    const lineup = lineupMap[shoe.id];
+    if (!lineup) return null;
+    return shoe.name.replace(lineup, '').trim();
+}
+
+// ============================================================
 //  SHOE DATA
 // ============================================================
 const shoeData = {
@@ -1091,8 +1142,13 @@ function showBrandPage(sport, brand) {
     renderBrand(sport, brand);
 }
 
-function showDetail(sport, brand, series, id) {
-    history.pushState({view: 'detail', sport, brand, series, id}, id, "#" + id);
+function showDetail(sport, brand, series, id, replace) {
+    const state = {view: 'detail', sport, brand, series, id};
+    if (replace) {
+        history.replaceState(state, id, "#" + id);
+    } else {
+        history.pushState(state, id, "#" + id);
+    }
     renderDetail(sport, brand, series, id);
 }
 
@@ -1169,13 +1225,34 @@ function renderBrand(sport, brand) {
     const imgDir = sportMeta[sport].imgDir;
     for (let series in seriesData) {
         let html = `<div class="series-section"><h3>${series}</h3><div class="spike-scroll-wrapper">`;
-        seriesData[series].forEach(shoe => {
-            html += `<div class="spike-item" onclick="showDetail('${sport}','${brand}','${series}','${shoe.id}')">
-                <div class="img-box"><img src="${imgDir}${shoe.img}" onerror="this.src='https://placehold.co/200x150?text=${encodeURIComponent(shoe.name)}'"></div>
-                <h4>${shoe.name}</h4>
-                <p>¥${shoe.price.toLocaleString()}</p>
-            </div>`;
-        });
+        if (sport === 'soccer') {
+            // 品名でグループ化（複数グレードを1カードにまとめる）
+            const lineups = {};
+            seriesData[series].forEach(shoe => {
+                const lineup = getLineup(shoe);
+                if (!lineups[lineup]) lineups[lineup] = [];
+                lineups[lineup].push(shoe);
+            });
+            for (let lineup in lineups) {
+                const shoes = lineups[lineup].slice().sort((a, b) => b.price - a.price);
+                const top = shoes[0];
+                const priceLabel = shoes.length > 1
+                    ? `¥${shoes[shoes.length-1].price.toLocaleString()} 〜 ¥${top.price.toLocaleString()}`
+                    : `¥${top.price.toLocaleString()}`;
+                const gradeBadge = shoes.length > 1 ? ` <span class="grade-badge">${shoes.length}グレード</span>` : '';
+                html += `<div class="spike-item" onclick="showDetail('${sport}','${brand}','${series}','${top.id}')">
+                    <h4>${lineup}${gradeBadge}</h4>
+                    <p>${priceLabel}</p>
+                </div>`;
+            }
+        } else {
+            seriesData[series].forEach(shoe => {
+                html += `<div class="spike-item" onclick="showDetail('${sport}','${brand}','${series}','${shoe.id}')">
+                    <h4>${shoe.name}</h4>
+                    <p>¥${shoe.price.toLocaleString()}</p>
+                </div>`;
+            });
+        }
         content.innerHTML += html + `</div></div>`;
     }
     document.getElementById('brand-view').style.display = 'block';
@@ -1189,12 +1266,7 @@ function renderDetail(sport, brand, series, id) {
     const shoe = seriesData.find(s => s.id === id);
     if (!shoe) return;
 
-    const imgDir = sportMeta[sport].imgDir;
     document.getElementById('detail-title').innerText = shoe.name;
-    document.getElementById('main-shoe-img').src = imgDir + shoe.img;
-    document.getElementById('main-shoe-img').onerror = function() {
-        this.src = 'https://placehold.co/400x400?text=' + encodeURIComponent(shoe.name);
-    };
     document.getElementById('shoe-description').innerHTML = linkifyTech(shoe.desc);
 
     // スペック表（specsのキーを日本語に変換）
@@ -1207,18 +1279,22 @@ function renderDetail(sport, brand, series, id) {
     document.getElementById('recommend-tags').innerHTML = (shoe.tags || []).map(t => `<span class="tag">${t}</span>`).join('');
     document.getElementById('shoe-updates').innerHTML = (shoe.updates || []).map(u => `<li>${u}</li>`).join('') || "<li>（情報なし）</li>";
 
-    // カラーバリエーション
-    const colorDots = document.getElementById('color-variants');
-    colorDots.innerHTML = "";
-    (shoe.colors || []).forEach(c => {
-        const btn = document.createElement('div');
-        btn.style.cssText = `width:22px;height:22px;border-radius:50%;background:${c.color};border:2px solid #ccc;cursor:pointer;`;
-        btn.onclick = () => {
-            const img = document.getElementById('main-shoe-img');
-            img.src = imgDir + c.img;
-        };
-        colorDots.appendChild(btn);
-    });
+    // グレード切替（サッカーで複数グレードがある場合のみ、各セクションヘッダーに配置）
+    const switcherSlots = document.querySelectorAll('[data-switcher]');
+    let switcherHtml = "";
+    if (sport === 'soccer') {
+        const lineup = getLineup(shoe);
+        const sameLineup = seriesData.filter(s => getLineup(s) === lineup);
+        if (sameLineup.length > 1) {
+            const sorted = sameLineup.slice().sort((a, b) => b.price - a.price);
+            switcherHtml = sorted.map(s => {
+                const grade = getGrade(s) || s.name;
+                const isActive = s.id === shoe.id;
+                return `<button class="grade-btn-inline ${isActive ? 'active' : ''}" onclick="showDetail('${sport}','${brand}','${series}','${s.id}',true)">${grade}</button>`;
+            }).join('');
+        }
+    }
+    switcherSlots.forEach(slot => { slot.innerHTML = switcherHtml; });
 
     drawChart(shoe.eval, sport);
     document.getElementById('detail-view').style.display = 'block';

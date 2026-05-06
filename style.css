@@ -58,27 +58,36 @@ header {
 .brand-header { padding: 30px 40px 10px 120px; border-bottom: 1px solid #eee; max-width: 1200px; margin: 0 auto; }
 .brand-header h2 { font-size: 24px; margin: 0; }
 .series-section { padding: 30px; border-bottom: 1px solid #eee; }
-.spike-scroll-wrapper { display: flex; overflow-x: auto; gap: 20px; padding: 10px 0; }
-.spike-item { min-width: 200px; border: 1px solid #eee; padding: 15px; text-align: center; cursor: pointer; transition: 0.2s; }
-.spike-item:hover { border-color: #000; }
-.img-box { height: 120px; display: flex; align-items: center; justify-content: center; background: #fafafa; margin-bottom: 10px; }
-.img-box img { max-width: 90%; max-height: 90%; }
+.spike-scroll-wrapper { display: flex; flex-wrap: wrap; gap: 24px 32px; padding: 10px 0; }
+.spike-item { padding: 8px 0; cursor: pointer; transition: 0.2s; }
+.spike-item h4 { margin: 0 0 4px; font-size: 15px; font-weight: 700; }
+.spike-item p { margin: 0; font-size: 13px; color: #666; }
+.spike-item:hover h4 { color: #1a6fc4; text-decoration: underline; }
+.grade-badge { display: inline-block; background: #f0f0f0; color: #666; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 10px; margin-left: 6px; vertical-align: middle; }
 
 /* ===== DETAIL ===== */
-.detail-header { padding: 30px 40px 10px 120px; border-bottom: 1px solid #eee; max-width: 1200px; margin: 0 auto; }
-.detail-header h2 { font-size: 22px; margin: 0; }
-.detail-container { display: grid; grid-template-columns: 420px 1fr; gap: 40px; padding: 30px; max-width: 1200px; margin: 0 auto; }
-.main-img-wrapper { background: #fafafa; border-radius: 8px; padding: 20px; border: 1px solid #eee; display: flex; justify-content: center; align-items: center; aspect-ratio: 1 / 1; }
-.main-img-wrapper img { max-width: 100%; max-height: 100%; object-fit: contain; }
-.color-dots { display: flex; gap: 10px; margin-top: 15px; justify-content: center; }
-.update-box { margin-top: 20px; padding: 15px; background: #fdfdfd; border: 1px dashed #ccc; border-radius: 4px; }
-.update-box h4 { margin: 0 0 10px 0; font-size: 14px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+.detail-header { padding: 40px 40px 16px; border-bottom: 1px solid #eee; max-width: 860px; margin: 0 auto; }
+.detail-header h2 { font-size: 26px; margin: 0; }
+.detail-container { padding: 30px 40px 60px; max-width: 860px; margin: 0 auto; }
+.update-box { margin-top: 0; padding: 15px; background: #fdfdfd; border: 1px dashed #ccc; border-radius: 4px; }
+
+/* ===== SECTION HEADER (with inline grade switcher) ===== */
+.section-header { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 15px; }
+.update-box .section-header { border-bottom: 1px solid #eee; padding-bottom: 5px; margin-bottom: 10px; }
+.grade-switcher-slot { display: flex; gap: 4px; flex-wrap: wrap; }
+.grade-switcher-slot:empty { display: none; }
+.grade-btn-inline { background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 4px 10px; cursor: pointer; font-size: 11px; font-weight: 600; transition: 0.2s; font-family: inherit; color: #333; white-space: nowrap; }
+.grade-btn-inline:hover { border-color: #111; }
+.grade-btn-inline.active { background: #111; color: #fff; border-color: #111; }
+.update-box .section-header h4 { margin: 0; font-size: 14px; }
 .update-box h4 small { color: #888; font-weight: normal; margin-left: 5px; }
 #shoe-updates { margin: 0; padding-left: 18px; font-size: 13px; color: #444; }
 .info-section { display: flex; flex-direction: column; gap: 20px; }
 .chart-box, .specs-box, .desc-box { background: #fff; padding: 20px; border-radius: 8px; border: 1px solid #eee; }
 .chart-box { text-align: center; }
-.chart-box h3, .specs-box h3, .desc-box h3 { font-size: 16px; margin: 0 0 15px 0; border-left: 4px solid #000; padding-left: 10px; }
+.chart-box .section-header h3, .specs-box .section-header h3, .desc-box .section-header h3 { font-size: 16px; margin: 0; border-left: 4px solid #000; padding-left: 10px; }
+.chart-box .section-header { justify-content: space-between; }
+.chart-box #radar-chart-area { display: flex; justify-content: center; }
 .specs-box table { width: 100%; border-collapse: collapse; font-size: 13px; }
 .specs-box th { text-align: left; padding: 10px; background: #fafafa; border-bottom: 1px solid #eee; width: 30%; color: #666; }
 .specs-box td { padding: 10px; border-bottom: 1px solid #eee; font-weight: bold; }
@@ -103,9 +112,9 @@ header {
 @media (max-width: 900px) {
     .sport-grid { grid-template-columns: repeat(3, 1fr); padding: 30px 16px; }
     .selection-grid { grid-template-columns: repeat(3, 1fr); }
-    .detail-container { grid-template-columns: 1fr; }
-    .main-img-wrapper { aspect-ratio: auto; height: 280px; }
-    .brand-header, .detail-header { padding-left: 20px; }
+    .detail-container { padding: 20px; }
+    .detail-header { padding: 30px 20px 12px; }
+    .brand-header { padding-left: 20px; }
 }
 @media (max-width: 580px) {
     .sport-grid { grid-template-columns: repeat(2, 1fr); }
