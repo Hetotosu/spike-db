@@ -706,26 +706,88 @@ const shoeData = {
             ]
         },
         Asics: {
-            "UNPRE ARS": [
-                {
-                    id: "unpre_ars2", name: "UNPRE ARS LOW 2", price: 17600, img: "unpre_ars2.jpg",
-                    colors: [{img: "unpre_ars2.jpg", color: "#c8102e"}],
-                    eval: [4, 4, 5, 4, 3],
-                    desc: "<b>アシックス最高峰のバスケットボールシューズ。</b><br>Propulsion Trussticがエネルギーロスを最小化し、推進力を最大化。FFBLASTミッドソールが軽量かつ高反発のクッション性を提供します。",
-                    specs: { weight: "約320g (28.0cm)", material: "合成繊維＋メッシュ", cut: "ローカット", cushion: "FFBLAST" },
-                    tags: ["PG", "SG", "スピード系", "日本人向け"],
-                    updates: ["Propulsion Trusst 2採用", "FFBLASTアップデート", "アッパーフィット感向上"]
-                }
-            ],
             "GLIDE NOVA": [
                 {
-                    id: "glide_nova2", name: "GLIDE NOVA FF 2", price: 12100, img: "glide_nova2.jpg",
-                    colors: [{img: "glide_nova2.jpg", color: "#00529b"}],
-                    eval: [4, 3, 4, 5, 4],
-                    desc: "アジリティとクッション性を両立したミドルレンジモデル。FFBLASTが快適なプレーをサポートし、日本人の足型に合った設計が特徴。",
-                    specs: { weight: "約340g (28.0cm)", material: "合成繊維＋メッシュ", cut: "ローカット", cushion: "FFBLAST" },
+                    id: "glidenova4", name: "GLIDE NOVA FF 4", price: 14300, img: "glidenova4.jpg",
+                    colors: [{img: "glidenova4.jpg", color: "#00529b"}],
+                    eval: [4, 4, 5, 3, 4],
+                    desc: "ホールド性を高めるLOOP LACE構造のヒールロックが足首まわりを囲うように配置され、シューレースで引き上げることで履き口のホールド性を高め激しいプレーをサポート。FF BLAST PLUSをミッドソールに採用しバウンス性を追求。前足部外側に樹脂製のサポートパーツを配置することで横ブレを抑制し踏み込み時のパワーロスを抑えてジャンプをサポートします。日本人プレーヤー向けの安定感重視オールラウンドモデル。",
+                    specs: { weight: "約340g (28.0cm)", material: "合成繊維＋メッシュ", cut: "ローカット", cushion: "FF BLAST PLUS" },
                     tags: ["全ポジション", "部活生", "日本人向け", "バランス型"],
-                    updates: ["FFBLASTアップデート", "アウトソール改良", "耐久性向上"]
+                    updates: ["LOOP LACE構造ヒールロック採用", "FF BLAST PLUSミッドソール採用", "前足部外側にTPUサポート配置", "横ブレ抑制設計"]
+                }
+            ],
+            "SWIFTACE": [
+                {
+                    id: "swiftace", name: "SWIFTACE", price: 15400, img: "swiftace.jpg",
+                    colors: [{img: "swiftace.jpg", color: "#00529b"}],
+                    eval: [4, 4, 3, 5, 4],
+                    desc: "スピードのあるオフェンス・ディフェンスでGAMEを支配するプレーヤー向け。ミッドソールはFLYTEFOAM（後方）とFLYTEFOAM PROPEL（前方）の2ピース構造を採用し、SPEEDTRUSSテクノロジーと組み合わせることで一歩目からの瞬間的なスピードとスピードの維持をサポート。ヒールに厚みを持たせることで前傾姿勢を促し自然と前に出やすい設計です。",
+                    specs: { weight: "約310g (28.0cm)", material: "合成繊維＋メッシュ", cut: "ローカット", cushion: "FLYTEFOAM＋FLYTEFOAM PROPEL" },
+                    tags: ["PG", "SG", "スピード系", "前傾姿勢"],
+                    updates: ["FLYTEFOAM／FLYTEFOAM PROPEL 2ピース構造採用", "SPEEDTRUSSテクノロジー搭載", "ヒール厚み増で前傾姿勢サポート"]
+                }
+            ],
+            "NOVA SURGE": [
+                {
+                    id: "novasurge3", name: "NOVA SURGE 3", price: 17600, img: "novasurge3.jpg",
+                    colors: [{img: "novasurge3.jpg", color: "#cc0000"}],
+                    eval: [5, 4, 5, 2, 3],
+                    desc: "パワー系・ビッグマン向けの安定感重視モデル。ミッドカット構造と外付けTPUカウンターが足元をしっかり固定し激しいコンタクトプレーをサポート。FF BLAST PLUSとGELクッションを組み合わせたミッドソールが着地衝撃を効率よく吸収しながら反発性も発揮。前足部外側のサポートパーツが横ブレを抑制しパワフルな踏み込みでもパワーロスを最小限に抑えます。",
+                    specs: { weight: "約380g (28.0cm)", material: "合成繊維＋メッシュ", cut: "ミッドカット", cushion: "FF BLAST PLUS＋GEL" },
+                    tags: ["SF", "PF", "C", "パワー系", "高サポート"],
+                    updates: ["ミッドカット構造強化", "FF BLAST PLUS×GELクッション", "外付けTPUカウンター採用", "アウトソールトラクション改良"]
+                },
+                {
+                    id: "novasurge_low2", name: "NOVA SURGE LOW 2", price: 16500, img: "novasurge_low2.jpg",
+                    colors: [{img: "novasurge_low2.jpg", color: "#1a1a8a"}],
+                    eval: [5, 4, 4, 3, 3],
+                    desc: "ホールド性を高めるLOOP LACE構造のヒールロックが、足首まわりを囲うように配置されシューレースで引き上げることで履き口のホールド性を高め激しいプレーをサポート。FF BLAST PLUSをミッドソールに採用しバウンス性を追求。前足部外側に樹脂製のサポートパーツを配置することで横ブレを抑制すると共に踏み込み時のパワーロスを抑えてジャンプをサポートする、NOVA SURGEシリーズのロー版モデルです。",
+                    specs: { weight: "約350g (28.0cm)", material: "合成繊維＋メッシュ", cut: "ローカット", cushion: "FF BLAST PLUS" },
+                    tags: ["SF", "PF", "パワー系", "ロー版"],
+                    updates: ["LOOP LACE構造ヒールロック採用", "FF BLAST PLUSミッドソール", "前足部外側TPUサポート配置"]
+                }
+            ],
+            "UNPRE ARS": [
+                {
+                    id: "unprears3", name: "UNPRE ARS 3", price: 18700, img: "unprears3.jpg",
+                    colors: [{img: "unprears3.jpg", color: "#c8102e"}],
+                    eval: [4, 4, 5, 4, 3],
+                    desc: "激しいサイドステップと素早い切り返しを持ち味にするプレーヤーのためのスタビリティモデル。TPU素材のサイドウォールとアッパー内部のサイドパネルが横方向の激しい動きをサポート。Propulsion Trussticがエネルギーロスを最小化し推進力を最大化。FF BLASTミッドソールが軽量かつ高反発のクッション性を提供します。日本人ガードの足型を徹底研究したミッドカットのスタビリティトップモデル。",
+                    specs: { weight: "約340g (28.0cm)", material: "合成繊維＋メッシュ", cut: "ミッドカット", cushion: "FF BLAST" },
+                    tags: ["PG", "SG", "切り返し重視", "日本人向け", "ミッドカット"],
+                    updates: ["TPUサイドウォール拡大", "Propulsion Trusstic改良", "FF BLASTアップデート"]
+                },
+                {
+                    id: "unprears_low3", name: "UNPRE ARS LOW 3", price: 17600, img: "unprears_low3.jpg",
+                    colors: [{img: "unprears_low3.jpg", color: "#cf4520"}],
+                    eval: [4, 4, 4, 5, 3],
+                    desc: "UNPRE ARS 3のロー版。激しいサイドステップと素早い切り返しに対応するスタビリティモデルを軽量化。TPU素材のサイドウォールとアッパー内部のサイドパネルが横方向の激しい動きをサポートし、Propulsion TrussticとFF BLASTミッドソールが推進力・反発性・軽量性を高次元で両立。日本人ガード向けに最適化されたローカットモデルです。",
+                    specs: { weight: "約310g (28.0cm)", material: "合成繊維＋メッシュ", cut: "ローカット", cushion: "FF BLAST" },
+                    tags: ["PG", "SG", "切り返し重視", "軽量", "日本人向け"],
+                    updates: ["ロー化による軽量性向上", "TPUサイドウォール継承", "Propulsion Trusstic搭載"]
+                }
+            ],
+            "GELHOOP": [
+                {
+                    id: "gelhoop17", name: "GELHOOP V17", price: 19800, img: "gelhoop17.jpg",
+                    colors: [{img: "gelhoop17.jpg", color: "#00529b"}],
+                    eval: [4, 5, 4, 5, 2],
+                    desc: "アシックスGELHOOPシリーズの最新モデル。軽量性とグリップ性能を高次元で両立しガード向けに最適化された日本製設計。FF BLASTミッドソールが軽量ながら高い反発性を発揮し素早いクロスオーバーやドリブル展開をサポート。GELクッションが着地衝撃を効率よく吸収し、ヘリンボーンパターンのアウトソールが多方向への鋭いトラクションを発揮します。",
+                    specs: { weight: "約290g (28.0cm)", material: "合成繊維＋メッシュ", cut: "ローカット", cushion: "FF BLAST＋GEL" },
+                    tags: ["PG", "SG", "ガード", "軽量", "グリップ重視", "日本製"],
+                    updates: ["FF BLAST採用で軽量化", "GELクッション位置最適化", "ヘリンボーントラクション改良"]
+                }
+            ],
+            "GELFAIRY": [
+                {
+                    id: "ladygelfairy9", name: "LADY GEL-FAIRY 9", price: 13200, img: "ladygelfairy9.jpg",
+                    colors: [{img: "ladygelfairy9.jpg", color: "#e8457a"}],
+                    eval: [4, 3, 4, 4, 4],
+                    desc: "女性プレーヤーに特化した設計のレディースバスケットボールシューズ。女性の足型に合わせたラストを採用しフィット感を最適化。GELクッションとFLYTEFOAMミッドソールの組み合わせが着地衝撃を効率よく吸収しながら軽量で快適な履き心地を提供。L.A.コンフォート機能が女性特有の足の骨格をサポートし長時間のプレーでも疲れにくい設計です。",
+                    specs: { weight: "約260g (24.0cm)", material: "合成繊維＋メッシュ", cut: "ローカット", cushion: "FLYTEFOAM＋GEL" },
+                    tags: ["女性向け", "レディース", "軽量", "全ポジション"],
+                    updates: ["女性専用ラスト採用", "L.A.コンフォート機能搭載", "GELクッション位置調整"]
                 }
             ]
         },
@@ -1615,6 +1677,8 @@ const techGlossary = {
     "SPEEDTRUSS": "アシックスのミッドソール技術。一歩目からの瞬間的なスピードと走行スピードの維持をサポートします。",
     "GEL": "アシックスのゲルクッション素材。着地時の衝撃を効率よく吸収し、足への負担を軽減します。",
     "Propulsion Trustic": "アシックスのソール技術。エネルギーロスを最小化し、推進力を最大化することで素早い動き出しをサポートします。",
+    "Propulsion Trusstic": "アシックスのソール技術。樹脂製プレートでアウトソールに剛性を与え、エネルギーロスを最小化して推進力を最大化することで素早い動き出しをサポートします。",
+    "LOOP LACE": "アシックスバスケットボールシューズに採用されたヒールロック構造。足首まわりを囲うようにループ状に配置され、シューレースで引き上げることで履き口のホールド性を高め激しいプレーをサポートします。",
     "L.A.コンフォート": "アシックスの女性専用快適・安定機能。女性特有の足の骨格に合わせて設計され、土踏まず（アーチ）をサポートし母趾球部への負担を軽減します。",
     // ヨネックス
     "パワークッション": "ヨネックス独自のクッション素材。衝撃吸収性と反発力を兼ね備え、12mの高さから落とした生卵が割れずに跳ね返るほどの性能を持ちます。",
