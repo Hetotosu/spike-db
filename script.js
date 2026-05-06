@@ -51,6 +51,9 @@ const lineupMap = {
     'm_neo3_elite':  'モナルシーダ NEO III',
     'm_neo3_pro':    'モナルシーダ NEO III',
     'm_neo3_select': 'モナルシーダ NEO III',
+    'm_sala_japan':  'モレリア SALA',
+    'm_sala_elite':  'モレリア SALA',
+    'm_sala_pro':    'モレリア SALA',
     // Asics DS LIGHT
     'dsl_pro':  'DS LIGHT',
     'dsl_adv':  'DS LIGHT',
@@ -91,7 +94,7 @@ function getLineup(shoe) {
 function getGrade(shoe) {
     const lineup = lineupMap[shoe.id];
     if (!lineup) return null;
-    return shoe.name.replace(lineup, '').trim();
+    return shoe.name.replace(lineup, '').replace(/\s*IN\s*$/, '').trim();
 }
 
 // ============================================================
@@ -133,6 +136,42 @@ const shoeData = {
                     specs: { weight: "約200g (27.0cm)", material: "天然皮革×β Mesh NEO×BareFoot Knit NEO", ground: "天然芝・土・人工芝" },
                     tags: ["FW", "MF", "素足感覚", "日本製トップモデル"],
                     updates: ["β Mesh NEO（日本製メッシュ）を中足部に採用で素足感向上", "BareFoot Knit NEOの履き口パターン見直し", "アウトソール素足感覚化（NEO IIIベース）", "スウェード調起毛インソールをMORELIA NEOシリーズで初採用"]
+                },
+                {
+                    id: "mn_sala_beta", name: "モレリアネオ SALA β JAPAN IN", price: 22000, img: "neo_sala_beta.jpg",
+                    colors: [{img: "neo_sala_beta.jpg", color: "#fff"}],
+                    eval: [4, 4, 5, 4, 2],
+                    desc: "「MORELIA NEO SALA」のβ（ベータ）モデル。フルレングス仕様のミッドソール全面にMIZUNO ENERZYを採用しクッション性と反発性を追求。アッパー前足部には足馴染みの良い天然皮革を引き続き採用しミズノにしか出せないフィッティングを実現。中足部には軽くて柔らかい日本製メッシュ素材β Mesh NEOを採用し更なる素足感覚を追求。足の甲から踵周りにかけてはBareFoot Knit NEOを採用し履き口周りのパターンを見直しより足に沿うようなニット形状を実現。約5mm厚のMIZUNO ENERZY xpインソールがフットサルプレーヤーのパフォーマンスアップをサポートする日本製インドアコート対応モデルです。",
+                    specs: { weight: "約220g (27.0cm)", material: "合成皮革×天然皮革×ニット", ground: "インドアコート（ノンマーキングソール）" },
+                    tags: ["フットサル", "IN", "素足感覚", "日本製"],
+                    updates: ["MIZUNO ENERZYミッドソール全面採用", "β Mesh NEOの中足部採用", "BareFoot Knit NEOの履き口パターン見直し", "MIZUNO ENERZY xpインソール搭載"]
+                },
+                {
+                    id: "m_sala_japan", name: "モレリア SALA JAPAN IN", price: 19800, img: "sala_japan.jpg",
+                    colors: [{img: "sala_japan.jpg", color: "#fff"}],
+                    eval: [4, 4, 5, 4, 3],
+                    desc: "フルミッドソール仕様にアップデートされた「MORELIA SALA」の日本製IN（インドアコート）対応トレーニングシューズ。フルレングスのMIZUNO ENERZYミッドソールがクッション性と反発性を両立。アッパー前足部には足馴染みの良い天然皮革を引き続き採用しミズノならではのフィッティングを追求し、フットサル専用クロスステッチが天然皮革の伸びを抑制。中足部には柔らかく適度なホールド感を追求したソフト人工皮革を採用しフットサル特有のクイック＆ストップ動作をサポート。グリップ性と耐摩耗性を追求したソール意匠も魅力です。",
+                    specs: { weight: "約230g (27.0cm)", material: "ソフト人工皮革×天然皮革（フットサル専用クロスステッチ）", ground: "インドアコート（ノンマーキングソール）" },
+                    tags: ["フットサル", "IN", "天然皮革", "日本製"],
+                    updates: ["フルミッドソール仕様化（前足部にもミッドソール）", "MIZUNO ENERZYミッドソール全面採用", "フットサル専用クロスステッチ採用"]
+                },
+                {
+                    id: "m_sala_elite", name: "モレリア SALA ELITE IN", price: 17050, img: "sala_elite.jpg",
+                    colors: [{img: "sala_elite.jpg", color: "#fff"}],
+                    eval: [4, 4, 4, 4, 4],
+                    desc: "「MORELIA SALA」のELITE（エリート）モデル。前足部にもミッドソールを搭載したフルミッドソール仕様に一新し、素足感覚を実現しながらクッション性も追求。アッパー前足部には足馴染みの良い天然皮革（ノーマルステッチ）を採用しミズノにしか出せないフィッティングを実現。中足部には柔らかく適度なホールド感のソフト人工皮革を採用しフットサル特有のクイック＆ストップ動作をサポート。グリップ性と耐摩耗性を追求したソール意匠が魅力のインドアコート対応トレーニングシューズです。",
+                    specs: { weight: "約240g (27.0cm)", material: "ソフト人工皮革×天然皮革（ノーマルステッチ）", ground: "インドアコート（ノンマーキングソール）" },
+                    tags: ["フットサル", "IN", "天然皮革"],
+                    updates: ["フルミッドソール仕様化（前足部にもミッドソール）", "MIZUNO ENERZYミッドソール全面採用"]
+                },
+                {
+                    id: "m_sala_pro", name: "モレリア SALA PRO IN", price: 12650, img: "sala_pro.jpg",
+                    colors: [{img: "sala_pro.jpg", color: "#fff"}],
+                    eval: [3, 4, 3, 4, 5],
+                    desc: "「MORELIA SALA」のPRO（プロ）モデル。前足部にもミッドソールを搭載したフルミッドソール仕様に一新し素足感覚とクッション性を両立。アッパー前足部には足馴染みの良い新しいマイクロファイバー人工皮革を採用しメンテフリーで安定したフィッティングを実現。中足部には柔らかく適度なホールド感のソフト人工皮革を採用。母指球部には高密度なラバー意匠を配置することで360°全方向に対するグリップ性を追求した、インドアコート対応のコストパフォーマンスモデルです。",
+                    specs: { weight: "約250g (27.0cm)", material: "ソフト人工皮革×マイクロファイバー人工皮革（ノーマルステッチ）", ground: "インドアコート（ノンマーキングソール）" },
+                    tags: ["フットサル", "IN", "コスパ"],
+                    updates: ["フルミッドソール仕様化（前足部にもミッドソール）", "新マイクロファイバー人工皮革採用", "母指球部に360°グリップ高密度ラバー意匠"]
                 }
             ],
             "モナルシーダ (MONARCIDA)": [
@@ -1062,6 +1101,75 @@ const shoeData = {
 let currentSport = null;
 let currentBrand = null;
 let techModalOpen = false;
+let compareList = []; // [{sport, brand, series, id}]
+
+// ============================================================
+//  COMPARE
+// ============================================================
+function compareKey(c) { return `${c.sport}/${c.brand}/${c.series}/${c.id}`; }
+
+function findShoe(c) {
+    return shoeData[c.sport]?.[c.brand]?.[c.series]?.find(s => s.id === c.id);
+}
+
+function isInCompare(sport, brand, series, id) {
+    return compareList.some(c => compareKey(c) === compareKey({sport, brand, series, id}));
+}
+
+function toggleCompare(sport, brand, series, id, event) {
+    if (event) event.stopPropagation();
+    const key = compareKey({sport, brand, series, id});
+    const idx = compareList.findIndex(c => compareKey(c) === key);
+    if (idx >= 0) {
+        compareList.splice(idx, 1);
+    } else {
+        // 異なるスポーツが選択されていたらクリア
+        if (compareList.length > 0 && compareList[0].sport !== sport) {
+            if (!confirm('別スポーツのスパイクを選び直しますか？現在の選択はクリアされます。')) return;
+            compareList = [];
+        }
+        if (compareList.length >= 2) compareList.shift(); // 古いものから捨てる
+        compareList.push({sport, brand, series, id});
+    }
+    updateCompareBar();
+    refreshCompareButtons();
+}
+
+function clearCompare() { compareList = []; updateCompareBar(); refreshCompareButtons(); }
+
+function updateCompareBar() {
+    const bar = document.getElementById('compare-bar');
+    if (!bar) return;
+    if (compareList.length === 0) { bar.style.display = 'none'; return; }
+    bar.style.display = 'flex';
+    const itemsHtml = compareList.map(c => {
+        const shoe = findShoe(c);
+        return `<div class="compare-bar-item">
+            <span>${shoe?.name || c.id}</span>
+            <button onclick="toggleCompare('${c.sport}','${c.brand}','${c.series}','${c.id}',event)" title="解除">×</button>
+        </div>`;
+    }).join('');
+    document.getElementById('compare-bar-items').innerHTML = itemsHtml;
+    const goBtn = document.getElementById('compare-bar-go');
+    goBtn.disabled = compareList.length !== 2;
+    goBtn.textContent = compareList.length === 2 ? '比較する →' : `あと${2 - compareList.length}つ選んでください`;
+}
+
+function refreshCompareButtons() {
+    document.querySelectorAll('[data-compare-btn]').forEach(btn => {
+        const k = btn.dataset.compareBtn;
+        const [sport, brand, series, id] = k.split('|');
+        const active = isInCompare(sport, brand, series, id);
+        btn.classList.toggle('active', active);
+        btn.textContent = active ? '✓ 比較中' : '＋ 比較';
+    });
+}
+
+function showCompare() {
+    if (compareList.length !== 2) return;
+    history.pushState({view: 'compare', items: compareList.slice()}, "compare", "#compare");
+    renderCompare();
+}
 
 // ============================================================
 //  HISTORY & NAVIGATION
@@ -1074,6 +1182,7 @@ window.onpopstate = function(event) {
         else if (s.view === 'sport') renderSportHome(s.sport);
         else if (s.view === 'brand') renderBrand(s.sport, s.brand);
         else if (s.view === 'detail') renderDetail(s.sport, s.brand, s.series, s.id);
+        else if (s.view === 'compare') { compareList = s.items.slice(); renderCompare(); }
     } else {
         renderTop();
     }
@@ -1158,8 +1267,9 @@ function goBack() { window.history.back(); }
 //  RENDERERS
 // ============================================================
 function hideAllViews() {
-    ['top-view', 'sport-home-view', 'brand-view', 'detail-view'].forEach(id => {
-        document.getElementById(id).style.display = 'none';
+    ['top-view', 'sport-home-view', 'brand-view', 'detail-view', 'compare-view'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = 'none';
     });
 }
 
@@ -1240,22 +1350,29 @@ function renderBrand(sport, brand) {
                     ? `¥${shoes[shoes.length-1].price.toLocaleString()} 〜 ¥${top.price.toLocaleString()}`
                     : `¥${top.price.toLocaleString()}`;
                 const gradeBadge = shoes.length > 1 ? ` <span class="grade-badge">${shoes.length}グレード</span>` : '';
+                const cmpKey = `${sport}|${brand}|${series}|${top.id}`;
+                const cmpActive = isInCompare(sport, brand, series, top.id);
                 html += `<div class="spike-item" onclick="showDetail('${sport}','${brand}','${series}','${top.id}')">
                     <h4>${lineup}${gradeBadge}</h4>
                     <p>${priceLabel}</p>
+                    <button class="compare-toggle ${cmpActive ? 'active' : ''}" data-compare-btn="${cmpKey}" onclick="toggleCompare('${sport}','${brand}','${series}','${top.id}',event)">${cmpActive ? '✓ 比較中' : '＋ 比較'}</button>
                 </div>`;
             }
         } else {
             seriesData[series].forEach(shoe => {
+                const cmpKey = `${sport}|${brand}|${series}|${shoe.id}`;
+                const cmpActive = isInCompare(sport, brand, series, shoe.id);
                 html += `<div class="spike-item" onclick="showDetail('${sport}','${brand}','${series}','${shoe.id}')">
                     <h4>${shoe.name}</h4>
                     <p>¥${shoe.price.toLocaleString()}</p>
+                    <button class="compare-toggle ${cmpActive ? 'active' : ''}" data-compare-btn="${cmpKey}" onclick="toggleCompare('${sport}','${brand}','${series}','${shoe.id}',event)">${cmpActive ? '✓ 比較中' : '＋ 比較'}</button>
                 </div>`;
             });
         }
         content.innerHTML += html + `</div></div>`;
     }
     document.getElementById('brand-view').style.display = 'block';
+    updateCompareBar();
 }
 
 function renderDetail(sport, brand, series, id) {
@@ -1267,7 +1384,19 @@ function renderDetail(sport, brand, series, id) {
     if (!shoe) return;
 
     document.getElementById('detail-title').innerText = shoe.name;
+    const priceEl = document.getElementById('detail-price');
+    if (priceEl) priceEl.innerText = `¥${shoe.price.toLocaleString()}（税込）`;
     document.getElementById('shoe-description').innerHTML = linkifyTech(shoe.desc);
+
+    // 詳細ページの比較ボタン
+    const detailCmpBtn = document.getElementById('detail-compare-btn');
+    if (detailCmpBtn) {
+        const active = isInCompare(sport, brand, series, id);
+        detailCmpBtn.dataset.compareBtn = `${sport}|${brand}|${series}|${id}`;
+        detailCmpBtn.className = 'compare-toggle' + (active ? ' active' : '');
+        detailCmpBtn.textContent = active ? '✓ 比較中' : '＋ 比較に追加';
+        detailCmpBtn.onclick = (e) => toggleCompare(sport, brand, series, id, e);
+    }
 
     // スペック表（specsのキーを日本語に変換）
     const specLabels = { weight: "重量", material: "アッパー", ground: "対応環境", cut: "カット", cushion: "クッション", surface: "対応コート" };
@@ -1298,12 +1427,71 @@ function renderDetail(sport, brand, series, id) {
 
     drawChart(shoe.eval, sport);
     document.getElementById('detail-view').style.display = 'block';
+    updateCompareBar();
+}
+
+// ============================================================
+//  RENDER COMPARE
+// ============================================================
+function renderCompare() {
+    if (compareList.length !== 2) return;
+    hideAllViews();
+    const shoes = compareList.map(c => ({c, shoe: findShoe(c)}));
+    if (shoes.some(x => !x.shoe)) return;
+
+    const specLabels = { weight: "重量", material: "アッパー", ground: "対応環境", cut: "カット", cushion: "クッション", surface: "対応コート" };
+    const colsHtml = shoes.map((x, i) => {
+        const {c, shoe} = x;
+        const specsRows = Object.entries(shoe.specs).map(([k,v]) =>
+            `<tr><th>${specLabels[k]||k}</th><td>${v}</td></tr>`).join('');
+        const tags = (shoe.tags || []).map(t => `<span class="tag">${t}</span>`).join('');
+        const updates = (shoe.updates || []).map(u => `<li>${u}</li>`).join('') || '<li>（情報なし）</li>';
+        return `<div class="compare-col">
+            <div class="compare-col-header">
+                <h2>${shoe.name}</h2>
+                <p class="compare-price">¥${shoe.price.toLocaleString()}</p>
+                <button class="compare-toggle active" onclick="removeFromCompareAndReturn('${c.sport}','${c.brand}','${c.series}','${c.id}')">✕ この商品を解除</button>
+            </div>
+            <div class="chart-box">
+                <div class="section-header"><h3>Performance Chart</h3></div>
+                <div id="compare-chart-${i}"></div>
+            </div>
+            <div class="specs-box">
+                <div class="section-header"><h3>Specifications</h3></div>
+                <table>${specsRows}</table>
+            </div>
+            <div class="desc-box">
+                <div class="section-header"><h3>Product Analysis</h3></div>
+                <p>${linkifyTech(shoe.desc)}</p>
+                <div class="tag-container">${tags}</div>
+            </div>
+            <div class="update-box">
+                <div class="section-header"><h4>Evolution <small>前作からの進化点</small></h4></div>
+                <ul>${updates}</ul>
+            </div>
+        </div>`;
+    }).join('');
+
+    document.getElementById('compare-container').innerHTML = colsHtml;
+    document.getElementById('compare-view').style.display = 'block';
+
+    // チャート描画
+    shoes.forEach((x, i) => drawChart(x.shoe.eval, x.c.sport, `compare-chart-${i}`));
+    updateCompareBar();
+}
+
+function removeFromCompareAndReturn(sport, brand, series, id) {
+    toggleCompare(sport, brand, series, id);
+    if (compareList.length < 2) {
+        // 1つになったら一覧に戻る
+        history.back();
+    }
 }
 
 // ============================================================
 //  RADAR CHART
 // ============================================================
-function drawChart(scores, sport) {
+function drawChart(scores, sport, targetId = 'radar-chart-area') {
     const labels = chartConfig[sport]?.labels || ["項目1","項目2","項目3","項目4","項目5"];
     const size = 340;
     const center = size / 2;
@@ -1369,7 +1557,8 @@ function drawChart(scores, sport) {
         labelsSvg += `<text text-anchor="middle" dominant-baseline="middle" font-size="10" font-weight="bold" fill="#333">${tspans}</text>`;
     }
 
-    document.getElementById('radar-chart-area').innerHTML =
+    const target = document.getElementById(targetId);
+    if (target) target.innerHTML =
         `<svg viewBox="0 0 ${size} ${size}" width="${size}" height="${size}" xmlns="http://www.w3.org/2000/svg">
             ${gridLines}${axisLines}
             <path d="${scorePath}" fill="rgba(0,0,0,0.12)" stroke="#111" stroke-width="2"/>
@@ -1389,6 +1578,8 @@ const techGlossary = {
     "Engineered Fit Last": "ミズノが開発した足型ラスト。足の形状に合わせたエンジニアリングにより、高いフィット感と素足感覚を実現します。",
     "BFレザー": "BareFoot Leather（ベアフットレザー）の略。人工素材でありながら柔らかく足馴染みが良く、フレームと組み合わせることで安定感も提供するミズノ独自素材。",
     "BareFoot Knit NEO": "ミズノのモレリアネオに採用されたニット素材アッパー。足首周りのホールド感に拘ったアッパーパターンで、シューズと足との一体化を追求します。",
+    "β Mesh NEO": "ミズノが採用した日本製の軽量で柔らかいメッシュ素材。中足部に配置することで、ニットや天然皮革と組み合わせた更なる素足感覚を実現します。",
+    "MIZUNO ENERZY xp": "「柔らかさ・反発性・軽量性」を追求した約5mm厚のミズノ製インソール。クッション性と反発性を兼ね備え、フットサルプレーヤーのパフォーマンスアップをサポートします。",
     // ナイキ
     "Zoom Air": "きつく伸ばされた高伸張性の繊維が編み込まれたナイキのクッション技術。足の着地ごとに繊維が圧縮されて衝撃を緩衝し、地面から爆発的かつパワフルな反発を感じることができます。",
     "エアズーム ストロベル": "Zoom Airバッグを中敷き（ストロベルボード）の直下に配置したナイキの革新的クッション技術。足の裏全体にZoom Airが直接くるため、驚くほどの弾力と衝撃吸収力を発揮します。",
